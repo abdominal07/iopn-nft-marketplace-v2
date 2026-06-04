@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IOPN NFT Marketplace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>🚀 IOPN NFT Marketplace</h1>
+
+        <button id="connectBtn">
+            Connect Wallet
+        </button>
+
+        <p id="wallet">
+            Not Connected
+        </p>
+
+        <input
+            id="metadata"
+            placeholder="IPFS Metadata URI"
+        />
+
+        <button id="mintBtn">
+            Mint NFT
+        </button>
+
+        <div id="status"></div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.1/dist/ethers.umd.min.js"></script>
+    <script src="app.js"></script>
+
+</body>
+</html>
