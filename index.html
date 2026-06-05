@@ -1,38 +1,146 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>IOPN NFT Marketplace</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>IOPN Marketplace</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
 
-    <div class="container">
+<nav class="navbar">
 
-        <h1>🚀 IOPN NFT Marketplace</h1>
+<div class="logo">
 
-        <button id="connectBtn">
-            Connect Wallet
-        </button>
+<img src="assets/logo.png">
 
-        <p id="wallet">
-            Not Connected
-        </p>
+<span>IOPN Marketplace</span>
 
-        <input
-            id="metadata"
-            placeholder="IPFS Metadata URI"
-        />
+</div>
 
-        <button id="mintBtn">
-            Mint NFT
-        </button>
+<div class="nav-links">
 
-        <div id="status"></div>
+<a href="#">Explore</a>
+<a href="#">Collections</a>
+<a href="#">Create</a>
+<a href="#">Stats</a>
 
-    </div>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.1/dist/ethers.umd.min.js"></script>
-    <script src="app.js"></script>
+<div class="nav-right">
+
+<input
+type="text"
+placeholder="Search NFTs, collections..."
+class="search"
+/>
+
+<button id="connectWallet">
+Connect Wallet
+</button>
+
+</div>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-left">
+
+<h1>
+The Infrastructure
+for the Sovereign Era
+</h1>
+
+<p>
+
+Discover, collect and trade NFTs
+on the IOPN blockchain.
+
+</p>
+
+<div class="hero-buttons">
+
+<button class="primary">
+Explore NFTs
+</button>
+
+<button class="secondary">
+Create NFT
+</button>
+
+</div>
+
+<div class="stats">
+
+<div>
+<h2>12K+</h2>
+<span>NFTs</span>
+</div>
+
+<div>
+<h2>3K+</h2>
+<span>Collectors</span>
+</div>
+
+<div>
+<h2>524K+</h2>
+<span>Volume</span>
+</div>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<img src="assets/hero.png">
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>🔥 Trending Collections</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="assets/nft1.jpg">
+<h3>IOPN Genesis</h3>
+<p>Floor 45 IOPN</p>
+</div>
+
+<div class="card">
+<img src="assets/nft2.jpg">
+<h3>Sovereign Nodes</h3>
+<p>Floor 21 IOPN</p>
+</div>
+
+<div class="card">
+<img src="assets/nft3.jpg">
+<h3>Digital Sovereigns</h3>
+<p>Floor 55 IOPN</p>
+</div>
+
+<div class="card">
+<img src="assets/nft4.jpg">
+<h3>Infra Pioneers</h3>
+<p>Floor 38 IOPN</p>
+</div>
+
+</div>
+
+</section>
+
+<script src="wallet.js"></script>
 
 </body>
 </html>
