@@ -5,92 +5,85 @@ let signer;
 let contract;
 
 async function loadABI() {
+const response = await fetch("./abi.json");
+return await response.json();
+}
 
-    const response =
-    await fetch("./abi.json");
+async function initContract() {
 
-    return await response.json();
+if (!window.ethereum) {
+alert("Please install OKX Wallet or MetaMask");
+return false;
+}
+
+const provider =
+new ethers.BrowserProvider(window.ethereum);
+
+signer =
+await provider.getSigner();
+
+const abi =
+await loadABI();
+
+contract =
+new ethers.Contract(
+CONTRACT,
+abi,
+signer
+);
+
+return true;
 }
 
 document
-.getElementById("connectBtn")
-.onclick = async () => {
+.getElementById("mintNFT")
+.addEventListener("click", async () => {
 
-    try {
+try {
 
-        const provider =
-        new ethers.BrowserProvider(
-            window.ethereum
-        );
+```
+if (!contract) {
 
-        await provider.send(
-            "eth_requestAccounts",
-            []
-        );
+  const ready =
+  await initContract();
 
-        signer =
-        await provider.getSigner();
+  if (!ready) return;
 
-        const address =
-        await signer.getAddress();
+}
 
-        document
-        .getElementById("wallet")
-        .innerText = address;
+const uri =
+  document
+  .getElementById("metadata")
+  .value;
 
-        const abi =
-        await loadABI();
+if (!uri) {
 
-        contract =
-        new ethers.Contract(
-            CONTRACT,
-            abi,
-            signer
-        );
+  alert("Enter IPFS Metadata URI");
 
-    } catch(err) {
+  return;
 
-        console.error(err);
+}
 
-    }
+const tx =
+  await contract.mint(uri);
 
-};
+alert("Transaction sent");
 
-document
-.getElementById("mintBtn")
-.onclick = async () => {
+await tx.wait();
 
-    try {
+alert("NFT Minted Successfully 🎉");
+```
 
-        const uri =
-        document
-        .getElementById("metadata")
-        .value;
+}
 
-        const tx =
-        await contract.mint(uri);
+catch(err) {
 
-        document
-        .getElementById("status")
-        .innerText =
-        "Transaction sent...";
+```
+console.error(err);
 
-        await tx.wait();
+alert("Mint Failed");
+```
 
-        document
-        .getElementById("status")
-        .innerText =
-        "NFT Minted 🎉";
+}
 
-    } catch(err) {
-
-        console.error(err);
-
-        document
-        .getElementById("status")
-        .innerText =
-        "Mint failed";
-
-    }
-
-};
+});
