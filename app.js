@@ -1,89 +1,87 @@
 const CONTRACT =
-"0x947D37af32CD984Db50AB376dDb0702615D0b28f";
+"0x83117a4473195c54392B16C876802e4f22D5C3C3";
 
 let signer;
 let contract;
 
 async function loadABI() {
-const response = await fetch("./abi.json");
-return await response.json();
+  const response = await fetch("./abi.json");
+  return await response.json();
 }
 
 async function initContract() {
 
-if (!window.ethereum) {
-alert("Please install OKX Wallet or MetaMask");
-return false;
-}
+  if (!window.ethereum) {
+    alert("Install OKX Wallet or MetaMask");
+    return false;
+  }
 
-const provider =
-new ethers.BrowserProvider(window.ethereum);
+  const provider =
+    new ethers.BrowserProvider(window.ethereum);
 
-signer =
-await provider.getSigner();
+  signer =
+    await provider.getSigner();
 
-const abi =
-await loadABI();
+  const abi =
+    await loadABI();
 
-contract =
-new ethers.Contract(
-CONTRACT,
-abi,
-signer
-);
+  contract =
+    new ethers.Contract(
+      CONTRACT,
+      abi,
+      signer
+    );
 
-return true;
+  return true;
 }
 
 document
 .getElementById("mintNFT")
 .addEventListener("click", async () => {
 
-try {
+  try {
 
-```
-if (!contract) {
+    if (!contract) {
+      const ready =
+      await initContract();
 
-  const ready =
-  await initContract();
+      if (!ready) return;
+    }
 
-  if (!ready) return;
+    const wallet =
+      await signer.getAddress();
 
-}
+    const uri =
+      document
+      .getElementById("metadata")
+      .value;
 
-const uri =
-  document
-  .getElementById("metadata")
-  .value;
+    if (!uri) {
+      alert("Enter IPFS Metadata URI");
+      return;
+    }
 
-if (!uri) {
+    const tx =
+      await contract.mint(
+        wallet,
+        uri
+      );
 
-  alert("Enter IPFS Metadata URI");
+    alert("Transaction sent 🚀");
 
-  return;
+    await tx.wait();
 
-}
+    alert("NFT Minted Successfully 🎉");
 
-const tx =
-  await contract.mint(uri);
+  } catch(err) {
 
-alert("Transaction sent");
+    console.error(err);
 
-await tx.wait();
+    alert(
+      "Mint Failed: " +
+      err.message
+    );
 
-alert("NFT Minted Successfully 🎉");
-```
-
-}
-
-catch(err) {
-
-```
-console.error(err);
-
-alert("Mint Failed");
-```
-
-}
+  }
 
 });
