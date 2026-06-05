@@ -16,38 +16,31 @@
 
 <nav class="navbar">
 
-<div class="logo">
+  <div class="logo">
+    <img src="assets/logo.png" alt="IOPN">
+    <span>IOPN Marketplace</span>
+  </div>
 
-<img src="assets/logo.png">
+  <div class="nav-links">
+    <a href="#explore">Explore</a>
+    <a href="#collections">Collections</a>
+    <a href="#create">Create</a>
+    <a href="#stats">Stats</a>
+  </div>
 
-<span>IOPN Marketplace</span>
+  <div class="nav-right">
 
-</div>
+    <input
+      type="text"
+      placeholder="Search NFTs, collections..."
+      class="search"
+    />
 
-<div class="nav-links">
-<button id="connectWallet">
-  Connect Wallet
-</button>
-<a href="#">Explore</a>
-<a href="#">Collections</a>
-<a href="#">Create</a>
-<a href="#">Stats</a>
+    <button id="connectWallet">
+      Connect Wallet
+    </button>
 
-</div>
-
-<div class="nav-right">
-
-<input
-type="text"
-placeholder="Search NFTs, collections..."
-class="search"
-/>
-
-<button id="connectWallet">
-Connect Wallet
-</button>
-
-</div>
+  </div>
 
 </nav>
 
@@ -56,15 +49,12 @@ Connect Wallet
 <div class="hero-left">
 
 <h1>
-The Infrastructure
+The Infrastructure<br>
 for the Sovereign Era
 </h1>
 
 <p>
-
-Discover, collect and trade NFTs
-on the IOPN blockchain.
-
+Discover, collect and trade NFTs on the IOPN blockchain.
 </p>
 
 <div class="hero-buttons">
@@ -101,14 +91,12 @@ Create NFT
 </div>
 
 <div class="hero-right">
-
-<img src="assets/hero.png">
-
+<img src="assets/hero.png" alt="Hero">
 </div>
 
 </section>
 
-<section class="section">
+<section class="section" id="collections">
 
 <h2>🔥 Trending Collections</h2>
 
@@ -142,7 +130,114 @@ Create NFT
 
 </section>
 
-<script src="wallet.js"></script>
+<section class="section" id="explore">
+
+<h2>🚀 Featured NFTs</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="assets/nft1.jpg">
+<h3>Genesis #001</h3>
+<p>Price: 25 IOPN</p>
+</div>
+
+<div class="card">
+<img src="assets/nft2.jpg">
+<h3>Genesis #002</h3>
+<p>Price: 42 IOPN</p>
+</div>
+
+<div class="card">
+<img src="assets/nft3.jpg">
+<h3>Genesis #003</h3>
+<p>Price: 65 IOPN</p>
+</div>
+
+<div class="card">
+<img src="assets/nft4.jpg">
+<h3>Genesis #004</h3>
+<p>Price: 18 IOPN</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="create">
+
+<h2>🎨 Create NFT</h2>
+
+<div style="max-width:700px;margin:auto;text-align:center;">
+
+<input
+type="text"
+id="metadata"
+placeholder="IPFS Metadata URI"
+class="search"
+style="width:100%;margin-top:20px;"
+>
+
+<br><br>
+
+<button id="mintNFT" class="primary">
+Mint NFT
+</button>
+
+</div>
+
+</section>
+
+<section class="section" id="stats">
+
+<h2>📊 Marketplace Stats</h2>
+
+<div class="stats">
+
+<div>
+<h2>984</h2>
+<span>Chain ID</span>
+</div>
+
+<div>
+<h2>IOPN</h2>
+<span>Token</span>
+</div>
+
+<div>
+<h2>Testnet</h2>
+<span>Network</span>
+</div>
+
+</div>
+
+</section>
+
+<footer class="footer">
+
+<div>
+
+<h3>IOPN Marketplace</h3>
+
+<p>
+The first NFT marketplace built on OPN Chain.
+</p>
+
+</div>
+
+<div>
+
+<p>
+Powered by IOPN Blockchain
+</p>
+
+</div>
+
+</footer>
+
 <script src="https://unpkg.com/ethers@6.13.1/dist/ethers.umd.min.js"></script>
+<script src="wallet.js"></script>
+<script src="app.js"></script>
+
 </body>
 </html>
