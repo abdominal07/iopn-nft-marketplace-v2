@@ -1,21 +1,167 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
 body{
-    background:#111;
-    color:white;
-    font-family:Arial;
-    text-align:center;
+background:#050816;
+color:white;
 }
 
-.container{
-    margin-top:80px;
+.navbar{
+height:80px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 50px;
+border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-button{
-    padding:12px 24px;
-    margin:10px;
-    cursor:pointer;
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:24px;
+font-weight:700;
 }
 
-input{
-    width:400px;
-    padding:10px;
+.logo img{
+width:45px;
+height:45px;
+border-radius:50%;
+}
+
+.nav-links{
+display:flex;
+gap:30px;
+}
+
+.nav-links a{
+color:white;
+text-decoration:none;
+}
+
+.nav-right{
+display:flex;
+gap:15px;
+align-items:center;
+}
+
+.search{
+width:300px;
+padding:12px;
+border:none;
+border-radius:10px;
+background:#111827;
+color:white;
+}
+
+#connectWallet{
+padding:12px 20px;
+border:none;
+border-radius:10px;
+background:#2563eb;
+color:white;
+cursor:pointer;
+}
+
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:100px 80px;
+}
+
+.hero-left{
+width:50%;
+}
+
+.hero-left h1{
+font-size:72px;
+font-weight:800;
+line-height:1.1;
+margin-bottom:25px;
+}
+
+.hero-left p{
+font-size:22px;
+opacity:.8;
+margin-bottom:35px;
+}
+
+.hero-buttons{
+display:flex;
+gap:20px;
+margin-bottom:40px;
+}
+
+.primary{
+background:#2563eb;
+color:white;
+border:none;
+padding:15px 28px;
+border-radius:12px;
+cursor:pointer;
+}
+
+.secondary{
+background:transparent;
+color:white;
+border:1px solid white;
+padding:15px 28px;
+border-radius:12px;
+cursor:pointer;
+}
+
+.stats{
+display:flex;
+gap:50px;
+}
+
+.stats h2{
+font-size:32px;
+}
+
+.hero-right img{
+width:650px;
+}
+
+.section{
+padding:50px 80px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+margin-top:30px;
+}
+
+.card{
+background:#0d1323;
+border-radius:18px;
+overflow:hidden;
+transition:.3s;
+cursor:pointer;
+}
+
+.card:hover{
+transform:translateY(-8px);
+}
+
+.card img{
+width:100%;
+height:280px;
+object-fit:cover;
+}
+
+.card h3{
+padding:15px;
+}
+
+.card p{
+padding:0 15px 15px;
+opacity:.8;
 }
