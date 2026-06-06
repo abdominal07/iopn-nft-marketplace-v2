@@ -1,230 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>IOPN Marketplace</title>
-
-<link rel="stylesheet" href="style.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-</head>
-
-<body>
-
-<nav class="navbar">
-
-  <div class="logo">
-    <img src="assets/logo.png" alt="IOPN">
-    <span>IOPN Marketplace</span>
-  </div>
-
-  <div class="nav-links">
-    <a href="#explore">Explore</a>
-    <a href="#collections">Collections</a>
-    <a href="#create">Create</a>
-    <a href="#stats">Stats</a>
-  </div>
-
-  <div class="nav-right">
-
-    <input
-      type="text"
-      placeholder="Search NFTs, collections..."
-      class="search"
-    />
-
-    <button id="connectWallet">
-      Connect Wallet
-    </button>
-
-  </div>
-
-</nav>
-
-<section class="hero">
-
-<div class="hero-left">
-
-<h1>
-The Infrastructure<br>
-for the Sovereign Era
-</h1>
-
-<p>
-Discover, collect and trade NFTs on the IOPN blockchain.
-</p>
-
-<div class="hero-buttons">
-
-<button class="primary">
-Explore NFTs
-</button>
-
-<button class="secondary">
-Create NFT
-</button>
-
-</div>
-
-<div class="stats">
-
-<div>
-<h2>12K+</h2>
-<span>NFTs</span>
-</div>
-
-<div>
-<h2>3K+</h2>
-<span>Collectors</span>
-</div>
-
-<div>
-<h2>524K+</h2>
-<span>Volume</span>
-</div>
-
-</div>
-
-</div>
-
-<div class="hero-right">
-<img src="assets/hero.png" alt="Hero">
-</div>
-
-</section>
-
-<section class="section" id="collections">
-
-<h2>🔥 Trending Collections</h2>
-
-<div class="cards">
-
-<div class="card">
-<img src="assets/nft1.jpg">
-<h3>IOPN Genesis</h3>
-<p>Floor 45 IOPN</p>
-</div>
-
-<div class="card">
-<img src="assets/nft2.jpg">
-<h3>Sovereign Nodes</h3>
-<p>Floor 21 IOPN</p>
-</div>
-
-<div class="card">
-<img src="assets/nft3.jpg">
-<h3>Digital Sovereigns</h3>
-<p>Floor 55 IOPN</p>
-</div>
-
-<div class="card">
-<img src="assets/nft4.jpg">
-<h3>Infra Pioneers</h3>
-<p>Floor 38 IOPN</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="section" id="explore">
-
-<h2>🚀 Featured NFTs</h2>
-
-<div class="cards">
-
-<div class="card">
-<img src="assets/nft1.jpg">
-<h3>Genesis #001</h3>
-<p>Price: 25 IOPN</p>
-</div>
-
-<div class="card">
-<img src="assets/nft2.jpg">
-<h3>Genesis #002</h3>
-<p>Price: 42 IOPN</p>
-</div>
-
-<div class="card">
-<img src="assets/nft3.jpg">
-<h3>Genesis #003</h3>
-<p>Price: 65 IOPN</p>
-</div>
-
-<div class="card">
-<img src="assets/nft4.jpg">
-<h3>Genesis #004</h3>
-<p>Price: 18 IOPN</p>
-</div>
-
-</div>
-
-</section>
-
-<section class="section" id="create">
-
-<h2>🎨 Create NFT</h2>
-
-<div style="max-width:700px;margin:auto;text-align:center;">
-
-<input
-type="text"
-id="metadata"
-placeholder="IPFS Metadata URI"
-class="search"
-style="width:100%;margin-top:20px;"
->
-
-<br><br>
-
-<button id="mintNFT" class="primary">
-Mint NFT
-</button>
-
-</div>
-
-</section>
-
-<!-- NOUVELLE SECTION -->
-
-<section class="section">
-
-<h2>👤 My NFTs</h2>
-
-<div id="myNFTs" class="cards">
-
-</div>
-
-</section>
-
-<section class="section" id="stats">
-
-<h2>📊 Marketplace Stats</h2>
-
-<div class="stats">
-
-<div>
-<h2>984</h2>
-<span>Chain ID</span>
-</div>
-
-<div>
-<h2>IOPN</h2>
-<span>Token</span>
-</div>
-
-<div>
-<h2>Testnet</h2>
-<span>Network</span>
-</div>
-
-</div>
-
-</section>
-
 <footer class="footer">
 
 <div>
@@ -232,35 +5,29 @@ Mint NFT
 <h3>IOPN Marketplace</h3>
 
 <p>
-The first NFT marketplace built on OPN Chain.
+The first NFT marketplace built on IOPN Chain.
 </p>
 
 </div>
 
 <div>
 
-<p>
-Powered by IOPN Blockchain
-</p>
+<p>Powered by IOPN Blockchain</p>
 
-<p>
-X:
+<br>
+
 <a
 href="https://x.com/JoyboyOGC"
 target="_blank"
-style="color:#00e5ff;"
+style="
+color:#00e5ff;
+font-weight:700;
+text-decoration:none;
+"
 >
-@JoyboyOGC
+𝕏 @JoyboyOGC
 </a>
-</p>
 
 </div>
 
 </footer>
-
-<script src="https://unpkg.com/ethers@6.13.1/dist/ethers.umd.min.js"></script>
-<script src="wallet.js"></script>
-<script src="app.js"></script>
-
-</body>
-</html>
